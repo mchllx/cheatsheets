@@ -1,0 +1,222 @@
+=====Methods & Constructors====
+#Methods
+
+//Method overloading, 1 method contains multiple methods with the same name
+//Different method signatures (different data types or no. of parameters/args)
+public void addMoney(String p1, double p2) {
+    ...
+}
+
+public void addMoney (String p1) {
+
+}
+
+How it works:
+1. Not based on access modifiers
+2. 
+
+#Constructors
+//Constructor, 1 constructor contains multiple constructors with the same name
+//usually used for initialising objects outside of their class, makes classes more flexible to use
+//Overloaded, different method signature (no. of parameters/args)
+public addMoney() { //No parameters
+    ...
+}
+
+public addMoney(String p1, Integer p2) { //Two parameters
+    ...
+}
+
+#this Keyword
+balance = this.balance;
+
+How it works:
+1. Initialise one constructor or variable outside of their block or class 
+
+==============Objects============
+#Objects
+Class myClass = new Class();
+
+How it works:
+1. Instantiate an instance object called myClass //To use outside of "Class" class file
+2. Modify using other keywords or functions
+
+===========Control Flow==========
+#if Statement
+
+if(condition) {
+    ...
+}
+
+How it works:
+1. if condition is true/false (boolean), run these actions
+2. else/else if, run other actions
+
+#While Statement
+
+while(true){
+    ...
+}
+
+How it works:
+1. While(condition), continue loop
+2. continue; or break; to end the loop
+3. Loop needs to be closed
+
+Notes:
+1. continue; skip the rest of the loop and iterate again
+2. break; end the loop
+
+#For Loop
+
+List<String>q = new LinkedList<>();
+q.add(1, "hello");
+q.add(2, "orange"); 
+
+int i = 1;
+for (String item : q) {
+System.out.println(item);
+i++;
+}
+
+How it works:
+1.  Loop starts at element i (value of 1), passes through collection List q,
+    item = "hello";
+2.  Print item //Expected "hello" printed to console
+3.  Loop starts at element i+1 (value of 1+1), iterates through collection List q again,
+4.  item = "orange";
+5.  Print item // Expected "orange";
+6.  Repeat until loop reaches end of the list (null)
+
+===========Collections==========
+#List
+
+List<String> q = new LinkedList<>();
+
+How it works --- List:
+1. Ordered
+2. Starts from 1
+
+How it works --- ArrayList:
+1. Ordered
+2. Duplicates allowed
+3. Starts from 0 (array)
+
+#Stack
+
+Deque<Integer> stack = new ArrayDeque<>();
+
+OR
+
+Stack<Integer> stack2 = new Stack<>();
+
+Deque<Integer> stack = new ArrayDeque<>();
+
+   //Add and pushes 5 to the first of the queue
+   stack.push(5);
+   //Removes 5 and return as Integer Object
+   stack.pop();
+   //Look at top of the stack without removing it, returns Integer Object
+   stack.peek();
+
+   System.out.println(stack.peek());
+
+System.out.println(stack.peek()); //Expected 1 printed
+
+How it works
+1. Ordered
+2. Duplicates allowed
+3. FIFO(First in first out)
+4. LIFO(Last in first out)
+5. Returns Integer Objects, not primitive data types (Values are not assigned directly)
+
+#Set
+
+Set<String> set = new HashSet<K>();
+
+How it works
+1. Unordered
+2. No duplicates
+3. Print using for loop, order is not guaranteed
+
+#Map
+
+Map<String, Object> map = new HashMap<K,V>();
+
+How it works
+1. Unordered
+2. No duplicates
+3. Each key is mapped to a value, as a pair
+4. Stores keys and values as Objects
+5. Can store Nulls
+
+===========I/O, Reader and Writer==========
+
+#Reader
+
+How it works:
+1. Reads character streams (Needs Input stream)
+
+Examples:
+FileReader -- Reads a character stream from a file
+BufferedReader -- Buffers the stream for efficiency, no need to convert from bytes -> char every iteration
+ByteReader -- Reads a byte-input 
+
+#Writer
+
+How it works:
+1. Writes to chracter stream (Needs Output stream)
+
+Examples:
+1. FileWriter -- Writes to a file from a character stream
+2. BufferedWriter -- Buffers the stream for efficiency, no need to convert from bytes -> char every iteration
+
+#I/O
+
+#Input
+
+Examples:
+1. FileInputStream
+2. InputStreamReader (bytes -> character stream)
+
+#Output
+
+Examples:
+1. FileOutputStream
+2. OutputStreamReader
+
+===========Networking==========
+
+#Server
+
+try (ServerSocket serverSocket = new ServerSocket(port)) {
+    System.out.println("Server is listening on port " + port);
+}
+
+How it works:
+1. 
+
+#Client
+
+#Socket
+
+===========Testing, Exceptions==========
+
+#Try
+
+#Try block
+try {
+    ...
+} catch {
+    ...
+} finally {
+    ...
+}
+
+How it works:
+1. Run the try block where you think the exc (Exception) will occur
+2. Catch specific exception thrown (check documentation for it)
+3. Finally keyword whether exc occurs or not 
+
+#Try with resource
+
