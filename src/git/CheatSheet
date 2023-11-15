@@ -1,23 +1,22 @@
-=====Most frequently used shortcuts====
+===========Frequent Used Shortcuts==========
 
-#Go-to Shortcuts
-
+# Go-to Shortcuts
 cd -- Current directory
 cd .. -- Go up by one directory
 cd /documents/... -- Go to specific directory
 ls -- List
 dir -- Directory contents (Windows)
 
-#How to run and compile according to specified directory/path
+# How to run and compile according to specified directory/path
 cp and src (source directory) must match the same file convention /src/bankacc → /classes/bankacc
 
 1. Compile - javac -d classes ./src/bankacc/* //Compiles every .java file in that folder
 2. Run - java -cp classes bankacc.Main //Run classes file package.Class
 
-#How to run with file
+# How to run with file
 1. java -cp classes wordprobability.Main src/birches.txt //Run classes file package.Class path of file (args)
 
-#VI Editor
+# VI Editor
 - vi filename (opens vi editor to view/edit filename)
 - i to switch to insert mode
 - esc to enter command mode
@@ -32,11 +31,11 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 For git installation:
 -After downloading setup file online
 
-✅ Initialise git repo***
+# Initialise git repo***
 - Go to ./ssh or where your project directory is
 - Git init //initialises git repo, show hidden files cmd + option + . to see .git folder
 
-✅ Generate ssh key and connect to github
+# Generate ssh key and connect to github
 -generate rsa ssh key "Ssh-keygen -t rsa -b 4096"
 - after successful install will show: Agent pid ----
 - go into .ssh folder your pc/.ssh
@@ -44,10 +43,10 @@ For git installation:
 - id_rsa and id_rsa.pub should be there
 - open id_rsa.pub with text edit and copy and paste into ssh keys on github
 
-✅ sync github repo from local to github cloud(www.github.com)
+# Sync github repo from local to github cloud(www.github.com)
 - create your github repo
 
-✅ create config file to allow local computer to upload/manage to github.com
+# Create config file to allow local computer to upload/manage to github.com
 - open terminal
 - cd .ssh to open .ssh folder
 - VI config (you are now creating config file)
@@ -56,15 +55,21 @@ For git installation:
 - :wq save and quit
 - config file shld be in .ssh folder
 
-✅ clone repo (clone local file to designated repo on github.com online)
+# Clone repo (clone local file to designated repo on github.com online)
 - shld be back to terminal now
 - copy ssh url of your github repo
 - Git clone git@github.com:username/reponame.git
 
-✅ How to add, commit, push and check status
+# How to add, commit, push and check status
 - Go to where your git repo is initialised
 - git status //Red means it's not committed, green means it is ready to be pushed
 - git add . //Add all of the files
 - git commit //This opens up VI editor
 - git push origin main //pushes to main branch
 - Refresh and check if your git repo is updated
+
+
+
+
+
+(c) mchllx github 2023
