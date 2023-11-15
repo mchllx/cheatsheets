@@ -76,7 +76,35 @@ How it works:
 1. Objects are instances of classes (Instantiation)
     Instantiate an instance object called myClass //To use outside of "Class" class file
     Modify using other keywords or functions
-2. A physical object, represents real-world concepts e.g. Person class to represent people 
+2. A physical object, represents real-world concepts e.g. Person class to represent people
+
+#Optionals
+How it works:
+1. Container obj to contain not-null objects
+2. Represent "no result" for method return types
+
+Creation:
+Optional.of(value)         -- Create Optional obj container with specified non-null value
+Optional.empty()           -- Creates an empty Optional instance
+Optional.ofNullable(value) -- Creates an Optional that can hold null value
+
+Usage methods:
+isPresent()
+ifPresent(Consumer)
+orElse(defaultValue)
+orElseGet(Supplier)
+orElseThrow()
+
+Stream Operations:
+.map
+.filter
+.flatMap
+
+How it works:
+1. Avoid using in class fields or Collections
+2. Null needs to be meaningful
+3. Avoid Optional.get, check if value is present first
+
 
 #Access Modifiers
 1. public -- accessible anywhere in the same program or outside
