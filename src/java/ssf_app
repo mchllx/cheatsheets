@@ -1,0 +1,11 @@
+============SpringBoot============
+#Application.class
+
+@Bean
+    public CommonsRequestLoggingFilter log() {
+    CommonRequestLoggingFilter logger =
+    new CommonRequestLoggingFilter();
+    logger.setIncludeClientInfo(true);
+    logger.setIncludeQueryString(true);
+    return logger;
+    }

@@ -1,0 +1,47 @@
+============HTTP methods============
+#Methods
+
+HTTP methods
+Create a new record (POST request)
+Read a record/list of records (GET request)
+Update a record (PUT request)
+Delete a record (DELETE request)
+
+//Use the springboot framework for MediaType
+@RequestMapping (path="/api/task/", produces=MediaType.APPLICATION_JSON_VALUE)
+@PostMapping (path="/api/task/", consumes=MediaType.APPLICATION_JSON_VALUE)
+
+// Post Method
+application/x-www-form-unecoded
+
+GET method
+inspect the response headers on chrome
+- header
+- Accept: image/
+- Content-type: text/html, text/plain, text/csv,  application/json
+- No payload
+
+POST method
+inspect the response headers on chrome
+- Status code, header
+- Content-type: text/html, application/json
+- Payload
+
+html
+<form action="/" method="post" enctype="multipart/form-data">
+
+Request
+POST /foo HTTP/1.1
+Content-Length: 68137
+Content-Type: multipart/form-data; boundary=---------------------------974767299852498929531610575
+
+-----------------------------974767299852498929531610575
+Content-Disposition: form-data; name="description"
+
+some text
+-----------------------------974767299852498929531610575
+Content-Disposition: form-data; name="myFile"; filename="foo.txt"
+Content-Type: text/plain
+
+
+

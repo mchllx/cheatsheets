@@ -1,0 +1,25 @@
+============Railway============
+
+railway login --browserless
+railway link
+railway up
+
+#Deployment
+
+Create a new project
+Select Redis service
+Select Empty service
+
+#Environment variables
+SPRING_REDIS_HOST = paste value from Redis service
+SPRING_REDIS_PORT = paste value from Redis service
+SPRING_REDIS_USERNAME = paste value from Redis service
+SPRING_REDIS_PASSWORD = paste value from Redis service
+
+Generate a random domain
+
+railway login --browserless
+railway link
+> Select a project
+> Select an environment 
+> Select a service, select the railway service, NOT redis

@@ -1,0 +1,8 @@
+============General============
+#Mvn
+
+mvn clean package
+mvn clean spring-boot:run
+
+// Run server file
+java -jar day12-0.0.1-SNAPSHOT.jar

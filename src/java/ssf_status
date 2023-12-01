@@ -1,0 +1,22 @@
+============General============
+#Server
+
+#Success 
+200 OK
+201 Created
+202 Accepted
+
+#Redirection
+300  Multiple choices, more than 1 possible response
+
+#Client error responses
+400 Bad request
+403 Forbidden, unauthorised, server refuses to give access to requested resource
+404 Not found, end point is valid, but content does not exist
+408 Request timeout, want to shut down this unused connection
+415 Unsupported Media Type, media format is not supported by server
+
+#Server error responses
+500 Internal server error
+505 HTTP version not supported
+511 Network Authentication Required, client needs to gain network access

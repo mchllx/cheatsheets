@@ -1,0 +1,5 @@
+============SpringBoot============
+#Application.properties
+
+application.properties
+logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter=DEBUG

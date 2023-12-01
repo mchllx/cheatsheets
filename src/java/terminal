@@ -1,0 +1,8 @@
+============Terminal============
+//Print working directory
+pwd
+ls
+ps -ef
+
+Exit linux server
+Ctrl +D

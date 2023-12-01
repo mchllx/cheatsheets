@@ -1,0 +1,32 @@
+============Dockerise/Containerise============
+#Build
+
+// Build Docker Image
+docker build -t “docker account name”/appname:appversion
+docker build -t mchllx/ssf-day14:v1.0.0 .
+
+dive mchllx/ssf-day14:v1.0.0
+docker images
+
+//src
+docker container run -d -p 8080:3000  darcodelim/dov-bear:v1.0.0
+
+// Set Container name
+docker “container name” run -d -p 8080:3000 --name=mydovbear  darcodelim/dov-bear:v1.0.0
+
+docker container  ps -a
+docker container  ps
+docker container inspect "with the container/image ID"
+docker container rm "container ID"
+
+//Eg. kill -9 7, PID no. can be found using ps-ef, kills process running main file, stops container from running
+kill -9 "PID no."
+
+//docker run -d -e PORT=5000 -e INSTANCE_NAME ="my app running on port 5000"
+docker run -d -e "Environment variable name"= the value
+
+//Can be restarted again
+docker container stop "container ID"
+docker restart "container ID"
+
+
