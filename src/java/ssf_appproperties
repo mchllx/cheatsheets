@@ -1,5 +1,12 @@
 ============SpringBoot============
 #Application.properties
 
+server.port=3000
+spring.redis.host=localhost
+spring.redis.port=6379
+spring.redis.username=
+spring.redis.password=
+spring.redis.database=1
+
 application.properties
 logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter=DEBUG
