@@ -29,4 +29,12 @@ docker run -d -e "Environment variable name"= the value
 docker container stop "container ID"
 docker restart "container ID"
 
+//Run redis in container
+docker pull redis
+docker run –-name ContainerName –dp 6379:6379 redis
+
+//connect to your containerised Redis server
+spring.redis.host=127.0.0.1
+spring.redis.port=6379
+
 

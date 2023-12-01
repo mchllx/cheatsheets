@@ -16,3 +16,7 @@
 > env
 >service (the one that's not redis)
 11. railway up
+
+if set env variables after link/up, it tries to use NIXPACKS which will fail because it supports only 19/17
+1. railway link again
+2. railway up
