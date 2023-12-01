@@ -3,3 +3,13 @@
 
 Paste link into Postman
 Check if it is returning a response body
+
+add headers if there are 2 controllers with the same endpoint
+
+Accept: text/html
+Accept: application/json
+
+to check if the correct response bodies are sent over
+
+add in body (guess this is for setting time?)
+{"timezone": "SGT", "adjustment": 100 }
