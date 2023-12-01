@@ -2,6 +2,7 @@
 //Print working directory
 pwd
 ls
+Ls target
 ps -ef
 
 Exit linux server

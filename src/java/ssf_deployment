@@ -1,27 +1,54 @@
-1. mvn clean package
-2. mvn clean spring-boot:run
+<!-- Deploy and Test in Stages -->
+
+<!-- Local Spring -->
+1. redis-server
+2. Open new terminal, redis-cli
+
+3. mvn clean package
+4. mvn clean spring-boot:run
 (if works, dockerise)
 
-3. docker build -t vttp-m2-day15-day15demo:v1.0.0 .
-4. docker container run -d -p:8080:8082 vttp-m2-day15-day15demo:v1.0.0
+ls target to check if jar file is in target
 
+
+
+<!-- Containerising (Local Spring -> Local Docker) -->
+5. docker build -t vttp-m2-day15-day15demo:v1.0.0 .
+6. docker container run -d -p:8080:8082 vttp-m2-day15-day15demo:v1.0.0
+
+Run redis in container
+
+7. docker pull redis
+8. docker run –-name ContainerName –dp 6379:6379 redis
+
+spring.redis.host=127.0.0.1
+spring.redis.port=6379
+
+check if it connects to your containerised Redis server
+
+
+
+<!-- Deployment (Local Docker -> Remote Railway) -->
 5. create new empty project
 6. add empty service
 7. add redis service
-
 8. railway login --browserless
 9. set env variables from redis
 10. railway link
 > project
 > env
->service (the one that's not redis)
+> service (the one that's not redis)
 11. railway up
 
 
+
+<!-- Troubleshooting -->
 if set env variables after link/up, it tries to use NIXPACKS which will fail because it supports only 19/17
 1. railway link again
 2. railway up
 
-if says spring application fail to run, check your application.java
+if says spring application fail to run
+1. check your application.java
 
-if it says jedis cannot be connected, check your configurations
+if it says jedis cannot be connected, environment variables not set
+1. check your configurations
