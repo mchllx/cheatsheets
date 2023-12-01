@@ -9,11 +9,11 @@ WORKDIR /app
 COPY mvnw .
 COPY mvnw.cmd .
 COPY pom.xml .
-COPY .mvn .vmn
+COPY .mvn .mvn
 COPY src src
 
 # Install the dependencies
-RUN mvn package -Dmaven.test.skip=true
+RUN mvn clean package -Dmaven.test.skip=true
 
 # Define environment variables
 # set environment variable, export is a Linux command

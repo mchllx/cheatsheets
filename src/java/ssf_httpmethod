@@ -20,12 +20,14 @@ inspect the response headers on chrome
 - Accept: image/
 - Content-type: text/html, text/plain, text/csv,  application/json
 - No payload
+- URL no query string
 
 POST method
 inspect the response headers on chrome
 - Status code, header
 - Content-type: text/html, application/json
 - Payload
+- URL no query string (unless appended)
 
 html
 <form action="/" method="post" enctype="multipart/form-data">
@@ -43,5 +45,20 @@ some text
 Content-Disposition: form-data; name="myFile"; filename="foo.txt"
 Content-Type: text/plain
 
+JSON Body
+{
+   "customers":
+  {
+    "firstName": "Joe”,
+    "lastName": “Bloggs”,
+    "fullAddress": 
+    {
+        "streetAddress": "21 2nd Street",
+        "city": "New York",
+        "state": "NY",
+        "postalCode": 10021
+    }
+  }
+}
 
 
