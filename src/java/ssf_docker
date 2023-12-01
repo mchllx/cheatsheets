@@ -16,8 +16,8 @@ docker container run -d -p 8080:3000  ssf/day15:v1.0.0
 // Set container name
 docker “container name” run -d -p 8080:3000 --name=mydovbear  ssf/day15:v1.0.0
 
+docker container ps
 docker container ps -a
-docker container  s
 docker container inspect "with the container/image id"
 docker container rm "container id"
 docker container stop "container id"

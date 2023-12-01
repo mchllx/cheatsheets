@@ -1,6 +1,7 @@
 ============General============
 #Controllers
 
+@Controllers
 
 @RestController
 @RequestMapping(path="/time", produces = MediaType.APPLICATION_JSON_VALUE)
