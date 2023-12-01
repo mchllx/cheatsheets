@@ -1,6 +1,18 @@
 ============SpringBoot============
 #Application.class
 
+    String port = “8080”;
+    ApplicationArguments cliOpts = new DefaultApplicationArguments(args);
+    if cliOpts.containsOption(“port”)
+    port = cliOpts.getOptionValues(“port”).get(0);
+
+    app.setDefaultProperties(
+    Collections.singletonMap(“server.port”, port)
+    );
+    
+    System.out.printf(“Application started on port %d\n”, port);
+    app.run(args);
+
 @Bean
     public CommonsRequestLoggingFilter log() {
     CommonRequestLoggingFilter logger =

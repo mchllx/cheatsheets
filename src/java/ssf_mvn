@@ -3,6 +3,8 @@
 
 mvn clean package
 mvn clean spring-boot:run
+mvn spring-boot:run -Dserver.port=3000
 
 // Run server file
 java -jar day12-0.0.1-SNAPSHOT.jar
+java -Dserver.port=3000 -jar myapp.jar
