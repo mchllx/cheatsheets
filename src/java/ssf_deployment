@@ -17,6 +17,11 @@
 >service (the one that's not redis)
 11. railway up
 
+
 if set env variables after link/up, it tries to use NIXPACKS which will fail because it supports only 19/17
 1. railway link again
 2. railway up
+
+if says spring application fail to run, check your application.java
+
+if it says jedis cannot be connected, check your configurations
