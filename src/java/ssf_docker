@@ -10,12 +10,8 @@ docker images
 docker image rm "imageid"
 docker image rm "imageid" --force
 
-//src
-docker container run -d -p 8080:3000  ssf/day15:v1.0.0
-
 // Set container name
 docker “container name” run -d -p 8080:3000 --name=mydovbear  ssf/day15:v1.0.0
-
 docker container ps
 docker container ps -a
 docker container inspect "with the container/image id"
@@ -26,9 +22,16 @@ docker restart "container id"
 //Eg. kill -9 7, PID no. can be found using ps-ef, kills process running main file, stops container from running
 kill -9 "PID no."
 
+//run in src folder
+docker container run -d -p 8080:3000  ssf/day15:v1.0.0
 //docker run -d -e PORT=5000 -e INSTANCE_NAME ="my app running on port 5000"
 docker run -d -e "Environment variable name"= the value
 
+//tagging
+# docker tag imageID username/repo:version
+docker tag 5d8f mchllx/ssfday16workshop:v1.0.0
+
+docker push mchllx/ssfday16workshop:v1.0.0
 
 //Run redis in container
 docker pull redis
@@ -37,8 +40,4 @@ docker run –-name ContainerName –dp 6379:6379 redis
 //connect to your containerised Redis server
 spring.redis.host=127.0.0.1
 spring.redis.port=6379
-
-//tagging
-# docker tag imageID username/repo:version
-docker tag 5d8f mchllx/ssfday16workshop:v1.0.0
 
