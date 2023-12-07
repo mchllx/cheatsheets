@@ -12,7 +12,6 @@ Delete a record (DELETE request)
 @PostMapping (path="/api/task/", consumes=MediaType.APPLICATION_JSON_VALUE)
 
 // Post Method
-application/x-www-form-unecoded
 
 GET method
 inspect the response headers on chrome
@@ -20,12 +19,14 @@ inspect the response headers on chrome
 - Accept: image/
 - Content-type: text/html, text/plain, text/csv,  application/json
 - No payload
-- URL no query string
+- URL w query string
 
 POST method
 inspect the response headers on chrome
 - Status code, header
-- Content-type: text/html, application/json
+- Content-type: text/html, application/json,
+application/x-www-form-unecoded payload
+
 - Payload
 - URL no query string (unless appended)
 

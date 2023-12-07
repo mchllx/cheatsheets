@@ -1,13 +1,16 @@
 ============General============
 #Server
 
+eTag = entityTag
+
 #Success 
 200 OK
 201 Created
 202 Accepted
 
 #Redirection
-300  Multiple choices, more than 1 possible response
+300 Multiple choices, more than 1 possible response
+304 Not modified (no body), If-None-Match or If-Modified-Since header and condition set to false
 
 #Client error responses
 400 Bad request

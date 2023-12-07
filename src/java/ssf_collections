@@ -1,0 +1,11 @@
+#Collections
+
+MultiValueMap<K,V> map = new MultiValueMap
+.add
+.addAll
+.getFirst
+.set
+.setAll
+.toSingleValueMap
+
+ListOperations

@@ -1,0 +1,27 @@
+#Beans
+
+@Configuration
+@PropertySource("classpath:donut.properties")
+@Value={}
+
+@Controller
+@RestController
+
+@Autowired
+@RequestMapping
+@GetMapping
+@PostMapping
+
+@NotEmpty - Not null, size/length must not be zero
+@NotNull - Can be empty, not null
+@Blank - Not null, trimmed length must not be zero
+@Min(value=, message"")
+@Max(value=, message"")
+@Size
+@Digits
+@Validated
+@Email
+@DateTimeFormat
+@Pattern
+@UUID
+

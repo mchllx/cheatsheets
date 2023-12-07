@@ -1,0 +1,23 @@
+============General============
+#Controllers
+
+@Controllers
+
+@RestController
+@RequestMapping
+@GetMapping
+produces = MediaType.APPLICATION_JSON_VALUE
+
+@PostMapping
+consume = MediaType.APPLICATION_JSON_VALUE
+consumes = MediaType.APPLICATION_XHTML_XML_VALUE
+
+Reader reader = new StringReader(params.get("pizza"));
+
+public ResponseEntity<String> getTimeAsJSON() {
+JsonObject resp = Json.createObjectBuilder()
+    .add("time", (new Date()).toString())
+    .build();
+
+    return ResponseEntity.ok(resp.toString());
+    }
