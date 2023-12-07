@@ -1,5 +1,86 @@
-#HTML, Thymeleaf
+#HTML, Thymeleaf, CSS
 
+<!-- CSS -->
+<link rel="stylesheet" href="/form.css">
+
+<!-- HTML, ThymeLeaf -->
 th:field
 th:action
 data-th-action
+data-th-text
+<span data-th-text="${currTime}"></span>
+
+<h3>About <a href="/about.html">me</a></h3> 
+
+<div>
+    <img src="/images/polar-bear.gif">
+</div>
+
+<input type="text" name="number" placeholder="Please type a number" required>
+
+<input type="email" name="email" placeholder="Your email" required>
+
+<!-- dropdown -->
+<td>Pax:</td>
+    <td>
+    <select name="pax" id="">
+        <option value="1">One</option>
+        <option value="2" selected>Two</option>
+        <option value="3">Three</option>
+    </select>
+</td>
+
+<td> Vegetarian: </td>
+    <td>
+        Meat! <input type="radio" name="meat-eater" id="">
+        No-Meat! <input type="radio" name="meat-eater" id="">
+    </td>
+
+<td> Potluck: </td>
+    <td>
+        Chicken <input type="checkbox" name="chicken">
+        Mutton <input type="checkbox" name="mutton">
+        Salad <input type="checkbox" name="salad">
+        Wine <input type="checkbox" name="wine">
+    </td>
+
+<td> Comments: </td>
+    <td>
+        <textarea name="comments" cols="30" rows="3"></textarea>
+    </td>
+
+<td>
+    <button type="reset">Clear</button>
+    <button type="submit">RSVP!</button>
+</td>
+
+<!-- multipart/form-data for sending files -->
+<form action="/" method="post" enctype="multipart/form-data">
+
+<h2>the current time now is <span data-th-text="${currTime}"></span></h2>
+
+<!-- if unless -->
+<div data-th-if="${currHour le 12}">
+    Good Morning
+   </div>
+   <div data-th-unless="${currHour gt 12}">
+    Good Afternoon
+   </div>
+
+<table>
+    <tr data-th-each="item, status :${cart}"
+        data-th-class="${status.odd? light-grey: light-blue}">
+        <td data-th-text="${item.itemName}"></td>
+        <td data-th-text="${item.qty}"></td>
+    </tr>
+    </table>
+
+
+<!-- generate url -->
+<ul>
+    <li data-th-each=“c: ${cities}”>
+        <a data-th-href=“@{/weather/{city}(city=${c.name},units=${c.units})}”>
+        <span data-th-text=“${c.name}”></span>
+        </a>
+    </li>
+</ul>

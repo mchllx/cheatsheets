@@ -1,5 +1,6 @@
 # Start with Linux server
 FROM maven:3-eclipse-temurin-21
+FROM node:20
 
 #Build application
 WORKDIR /app
@@ -14,6 +15,7 @@ COPY src src
 
 # Install the dependencies
 RUN mvn clean package -Dmaven.test.skip=true
+RUN npm ci
 
 # Define environment variables
 # set environment variable, export is a Linux command
@@ -33,3 +35,4 @@ EXPOSE ${PORT}
 
 # Run the program
 ENTRYPOINT SERVER_PORT=${PORT} java -jar target/day15-0.0.1-SNAPSHOT.jar
+ENTRYPOINT SERVER_PORT=${PORT} node main.js

@@ -1,6 +1,10 @@
 ============General============
 #Mvn
 
+./mvnw clean spring-boot:run
+./mvnw clean spring-boot:run -Dserver.port=3000
+./mvnw clean spring-boot:run -Dmaven.test.skip.true
+
 mvn clean package
 
 mvn clean package -Dskiptest
@@ -14,3 +18,5 @@ java -jar day12-0.0.1-SNAPSHOT.jar
 java -Dserver.port=3000 -jar myapp.jar
 
 java -Dserver.port=3000 -jar target/ssf-assessment2-0.0.1-SNAPSHOT.jar
+
+mvn spring-boot:run -Dspring-boot.run.arguments=“--port=3000 --logLevel=TRACE”

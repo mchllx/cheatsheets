@@ -2,15 +2,28 @@
 #Controllers
 
 @Controllers
-
 @RestController
-@RequestMapping
-@GetMapping
-produces = MediaType.APPLICATION_JSON_VALUE
 
-@PostMapping
-consume = MediaType.APPLICATION_JSON_VALUE
-consumes = MediaType.APPLICATION_XHTML_XML_VALUE
+// DispatcherServlet
+// requesthandlers
+@RequestMapping
+@RequestMapping(path={"/", "/index.html"})
+@RequestMapping(path="/api/task/", produces=MediaType.APPLICATION_JSON_VALUE)
+
+@GetMapping
+@GetMapping(produces={"text/html"})
+@GetMapping(produces=MediaType.APPLICATION_JSON_VALUE)
+@GetMapping(produces=MediaType.TEXT_HTML_VALUE)
+
+public String index(Model model) {
+    model.addAttribute(“currTime”, (new Date()).toString());
+    return “index”
+    }
+
+@PostMapping (1 handler can produce and consume)
+@PostMapping(path="/api/task/", consumes=MediaType.APPLICATION_JSON_VALUE)
+@PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE)
+@PostMapping(consumes={"application/json"})
 
 Reader reader = new StringReader(params.get("pizza"));
 

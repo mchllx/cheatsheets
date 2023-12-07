@@ -8,5 +8,4 @@ spring.redis.username=
 spring.redis.password=
 spring.redis.database=1
 
-application.properties
 logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter=DEBUG

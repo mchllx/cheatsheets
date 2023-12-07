@@ -1,0 +1,36 @@
+// Logger
+
+./mvnw clean spring-boot:run -Dspring-boot.run.arguments="--port=3000 --logLevel=DEBUG"
+./mvnw clean spring-boot:run -Dspring-boot.run.arguments" --logLevel=TRACE"
+
+@Bean
+	public CommonsRequestLoggingFilter log() {
+		CommonsRequestLoggingFilter logger = new CommonsRequestLoggingFilter();
+			logger.setIncludeClientInfo(true);
+			logger.setIncludeQueryString(true);
+			return logger;
+	}
+
+
+logger lvl default = INFO
+
+"2022–07–16 13:16:51.810 — Date and Time
+INFO — Log Level
+12620 — Process ID
+[nio-8080-exec-1] — Thread name
+com.logging.Controller — Logger name
+Initializing Spring embedded WebApplicationContext — Log message"
+
+// application.prooperties
+logging.level.org.springframework.web.filter.CommonsRequestLoggingFilter=DEBUG
+ERROR, WARN, INFO, DEBUG, TRACE
+
+// formatting
+logging.pattern.console=%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){green} %clr([%level]){magenta}  %c{1.} [%t] %m%n
+
+//store in error.log
+logging.file.name = error.log
+logging.pattern.file= %clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){green} [%level] %c{1.} [%t] %m%n
+
+dont open during exam 
+https://medium.com/javarevisited/understanding-logging-in-spring-boot-ac0fd79177b4

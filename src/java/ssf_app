@@ -12,12 +12,3 @@
     
     System.out.printf(“Application started on port %d\n”, port);
     app.run(args);
-
-@Bean
-    public CommonsRequestLoggingFilter log() {
-    CommonRequestLoggingFilter logger =
-    new CommonRequestLoggingFilter();
-    logger.setIncludeClientInfo(true);
-    logger.setIncludeQueryString(true);
-    return logger;
-    }

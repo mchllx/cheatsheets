@@ -1,37 +1,32 @@
 ============HTTP methods============
-#Methods
+<!-- #HTTP Methods -->
+Read GET /customer/1
+Create POST /customer
+Update PUT /customer/1
+Delete DELETE /customer/1
 
-HTTP methods
+<!-- HTTP methods -->
 Create a new record (POST request)
 Read a record/list of records (GET request)
 Update a record (PUT request)
 Delete a record (DELETE request)
 
-//Use the springboot framework for MediaType
-@RequestMapping (path="/api/task/", produces=MediaType.APPLICATION_JSON_VALUE)
-@PostMapping (path="/api/task/", consumes=MediaType.APPLICATION_JSON_VALUE)
-
-// Post Method
-
-GET method
+<!-- GET method -->
 inspect the response headers on chrome
+- GET /weather?city=singapore
 - header
 - Accept: image/
 - Content-type: text/html, text/plain, text/csv,  application/json
 - No payload
 - URL w query string
 
-POST method
+<!-- POST method -->
 inspect the response headers on chrome
 - Status code, header
 - Content-type: text/html, application/json,
 application/x-www-form-unecoded payload
-
 - Payload
 - URL no query string (unless appended)
-
-html
-<form action="/" method="post" enctype="multipart/form-data">
 
 Request
 POST /foo HTTP/1.1
