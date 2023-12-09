@@ -4,7 +4,7 @@
     <h1>An error has occurred</h1>
     <h2 data-th-text=“|${error} - ${message}|”></h2>
     <div>
-    <img data-th-src=“@{/404.png}”>
+    <img data-th-src=“@{images/404.png}”>
     </div>
     <p>
     There seems to be an error with the following request

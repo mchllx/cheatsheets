@@ -4,10 +4,18 @@
 <link rel="stylesheet" href="/form.css">
 
 <!-- HTML, ThymeLeaf -->
-th:field
-th:action
+data-th-field
 data-th-action
 data-th-text
+data-th-object
+
+th:field
+th:action
+th:text
+th:object
+
+#fields
+
 <span data-th-text="${currTime}"></span>
 
 <h3>About <a href="/about.html">me</a></h3> 
@@ -19,6 +27,8 @@ data-th-text
 <input type="text" name="number" placeholder="Please type a number" required>
 
 <input type="email" name="email" placeholder="Your email" required>
+
+<button type="submit" data-th-field="*{val}">Generate</button>
 
 <!-- dropdown -->
 <td>Pax:</td>
@@ -56,6 +66,7 @@ data-th-text
 
 <!-- multipart/form-data for sending files -->
 <form action="/" method="post" enctype="multipart/form-data">
+<form action="@{/results}" method="GET" data-th-object="${generateObj}">
 
 <h2>the current time now is <span data-th-text="${currTime}"></span></h2>
 
@@ -84,3 +95,6 @@ data-th-text
         </a>
     </li>
 </ul>
+
+<img data-th-src="@{/images/404.png}">
+

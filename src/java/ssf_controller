@@ -20,10 +20,44 @@ public String index(Model model) {
     return “index”
     }
 
+public String getRegistration(Model model) {
+    model.addAttribute(“registration”
+    , new Registration());
+    return “registration”;
+}
+
 @PostMapping (1 handler can produce and consume)
 @PostMapping(path="/api/task/", consumes=MediaType.APPLICATION_JSON_VALUE)
 @PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE)
 @PostMapping(consumes={"application/json"})
+
+@PostMapping(path=“/register”)
+    public String postRegistration(Model model
+    , @Valid Registration registration, BindingResult binding) {
+    ...
+    }
+
+    if (binding.hasErrors())
+    return “registration”;
+
+    if (!isNameUnique(registration.getName())) {
+        FieldError err = new FieldError("registration", “name”
+        , “%s is not available”.formatted(registration.getName());
+        binding.addError(err);
+        return “registration”;
+    }
+
+public String createUser(
+    @RequestBody MultiValueMap<String, String> form,
+    Model model) {
+        String name = form.getFirst("name");
+        String email = form.getFirst("email");
+        String phone = form.getFirst("phone");
+}
+
+public String createUser(@ModelAttribute User user Model model) {
+
+}
 
 Reader reader = new StringReader(params.get("pizza"));
 

@@ -24,7 +24,7 @@ inspect the response headers on chrome
 inspect the response headers on chrome
 - Status code, header
 - Content-type: text/html, application/json,
-application/x-www-form-unecoded payload
+application/x-www-form-unecoded (form)
 - Payload
 - URL no query string (unless appended)
 

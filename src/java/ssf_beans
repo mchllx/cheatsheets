@@ -15,13 +15,18 @@
 @NotEmpty - Not null, size/length must not be zero
 @NotNull - Can be empty, not null
 @Blank - Not null, trimmed length must not be zero
-@Min(value=, message"")
+@Min(value=, message"") value
 @Max(value=, message"")
-@Size
+@Size(max=30, message="Email must not exceed 30 characters")
 @Digits
 @Validated
-@Email
-@DateTimeFormat
-@Pattern
+@Email(message="Invalid email format, name@gmail.com")
+@DateTimeFormat(pattern="yyyy-MM-dd")
+@Pattern(regexp = "(8|9)[0-9]{7})", message="Invalid phone number")
 @UUID
+@AssertTrue
+@Past(message="Birth date must be a past date less than today")
+@PastorPresent
+@FutureOrPresent
+@FutureOrPresent
 
