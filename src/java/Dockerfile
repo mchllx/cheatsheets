@@ -1,6 +1,7 @@
 # Start with Linux server
 FROM maven:3-eclipse-temurin-21
 FROM node:20
+FROM openjdk:21-bookworm AS builder
 
 #Build application
 WORKDIR /app

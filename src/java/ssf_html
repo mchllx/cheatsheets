@@ -8,14 +8,29 @@ data-th-field
 data-th-action
 data-th-text
 data-th-object
+data-th-errors
 
 th:field
 th:action
 th:text
 th:object
+th:errors
 
-#fields
+#fields (TL helper object)
+#fields.hasErrors('fieldname')
+#fields.errors('fieldname')
 
+<a data-th-href="@{http://www.thymeleaf/documentation.html}">
+<a data-th-href="@{/order/list}"></a>
+<a data-th-href="@{~/billing-app/showDetails.html}"></a>
+<a data-th-href="@{/order/details(id=3)}"></a>
+
+<a th:href="@{http://www.test.com}"></a>
+<a th:href="@{/order/list}"></a>
+<a th:href="@{~/billing-app/showDetails.html}"></a>
+<a th:href="@{/order/details(id=3)}"></a>
+
+</a>
 <span data-th-text="${currTime}"></span>
 
 <h3>About <a href="/about.html">me</a></h3> 
@@ -97,4 +112,7 @@ th:object
 </ul>
 
 <img data-th-src="@{/images/404.png}">
+
+<a data-th-href="@{'/contactsList/' + *{session.name}}">
+<label span data-th-text="*{session.name}"</span></label></a> 
 

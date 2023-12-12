@@ -1,0 +1,41 @@
+#Redis - List
+
+set <K, V>
+set count 0
+set email fred@gmail.com
+
+get <K>
+get email
+
+del <K>
+del email
+
+exists <K>
+exists email
+
+incr count
+incrby count 5
+
+decrby count
+decrby count 5
+
+# push into list
+lpush cart apple 
+rpush cart orange
+
+# remove
+lpop cart
+rpop cart
+
+# get an item(index) from list
+lindex cart 1
+
+# list length
+llen cart
+
+# change value of elem
+lset cart 1 "fuji apple"
+
+# insert elem into list
+linsert cart before apple grapes
+linsert cart after apple grapes

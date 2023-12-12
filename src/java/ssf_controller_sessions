@@ -1,0 +1,11 @@
+#Sessions
+
+HttpSession.setAttribute("attributeName", object)
+
+//returns null if obj is not in session
+HttpSession.getAttribute("attributeName")
+HttpSession.removeAttribute("attributeName")
+
+//destroys session
+HttpSession.invalidate();
+

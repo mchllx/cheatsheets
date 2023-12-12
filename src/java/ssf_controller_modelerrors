@@ -1,0 +1,20 @@
+@PostMapping(path=“/register”)
+    public String postRegistration(Model model
+    , @Valid Registration registration, BindingResult binding) {
+    ...
+    }
+
+    if (binding.hasErrors())
+    return “registration”;
+
+    if (!isNameUnique(registration.getName())) {
+        FieldError err = new FieldError("registration", “name”, “%s is not available”.formatted(registration.getName()));
+        binding.addError(err);
+        return “registration”;
+    }
+
+    <form method=“POST” data-th-action=“@{/register}” data-th-object=“${registration}”>
+    <input type=“text” data-th-field=“*{name}”>
+    <p data-th-if=“${#fields.hasErrors(‘name’)}”
+    data-th-errors=“*{name}”
+    data-th-errorclass=“error”/>

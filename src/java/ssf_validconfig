@@ -1,0 +1,13 @@
+#Appconfig (Svc)
+
+@Configuration
+public class AppConfiguration {
+
+    @Bean
+    @Scope(value=WebApplicationContext.SCOPE_SESSION, proxyMode=ScopedProxyMode.TARGET.CLASS)
+
+    public Contact requestScopedBean() {
+
+        return new Contact();
+    }
+}

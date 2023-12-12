@@ -31,22 +31,6 @@ public String getRegistration(Model model) {
 @PostMapping(consumes=MediaType.APPLICATION_JSON_VALUE)
 @PostMapping(consumes={"application/json"})
 
-@PostMapping(path=“/register”)
-    public String postRegistration(Model model
-    , @Valid Registration registration, BindingResult binding) {
-    ...
-    }
-
-    if (binding.hasErrors())
-    return “registration”;
-
-    if (!isNameUnique(registration.getName())) {
-        FieldError err = new FieldError("registration", “name”
-        , “%s is not available”.formatted(registration.getName());
-        binding.addError(err);
-        return “registration”;
-    }
-
 public String createUser(
     @RequestBody MultiValueMap<String, String> form,
     Model model) {
@@ -56,15 +40,12 @@ public String createUser(
 }
 
 public String createUser(@ModelAttribute User user Model model) {
-
 }
 
-Reader reader = new StringReader(params.get("pizza"));
+public ModelAndView addContact(@Valid @ModelAttribute Contact contact, BindingResult bindings, Model model){
+    ModelAndView mav = new ModelAndView();
 
-public ResponseEntity<String> getTimeAsJSON() {
-JsonObject resp = Json.createObjectBuilder()
-    .add("time", (new Date()).toString())
-    .build();
-
-    return ResponseEntity.ok(resp.toString());
-    }
+    mav.setStatus(HttpStatus.valueOf(201));
+    mav.setViewName("success");
+    return max;
+} 

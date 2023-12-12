@@ -1,0 +1,22 @@
+#Redis
+
+redis-server
+redis-cli
+redis-cli -h localhost ping (PONG)
+
+keys *name*
+keys c01
+keys *
+
+//Timeout/s
+expire cart 300
+
+//Check expiration dur
+ttl cart
+
+-1 means no expiration
+-2 key expired
+
+
+RedisTemplate<String, Object>
+

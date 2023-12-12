@@ -1,0 +1,5 @@
+#Git shortcuts
+
+git branch sessions
+git checkout sessions
+git push origin sessions

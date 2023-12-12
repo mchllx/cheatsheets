@@ -1,0 +1,18 @@
+#Redis - Map
+
+#Set
+hset <SetKey> <K> <V>
+hset c01 email fred@gmail.com
+hset c01 credit 100
+
+#Read
+hget c01 email
+hgetall c01
+
+#delete
+hdel c01 email
+
+#Check if key exists
+hexists c01 comments
+
+""" Same as list but with "h" in front
