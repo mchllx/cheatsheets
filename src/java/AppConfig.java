@@ -1,3 +1,19 @@
+package sg.edu.nus.iss.contact;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisClientConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
+
+import sg.edu.nus.iss.contact.services.Utils;
+
 @Configuration
 public class AppConfig {
 
@@ -14,12 +30,11 @@ public class AppConfig {
     private Integer redisDatabase;
 
     @Value("${spring.redis.username}")
-    private String redisUser;
+    private String redisUsername;
 
     @Value("${spring.redis.password}")
     private String redisPassword;
 
-    //myredis
     @Bean(Utils.BEAN_REDIS)
     public RedisTemplate<String, String> createRedisConnection() {
 
@@ -27,9 +42,14 @@ public class AppConfig {
         config.setHostName(redisHost);
         config.setPort(redisPort);
         config.setDatabase(redisDatabase);
-        config.setUsername(redisUser);
-        config.setPassword(redisPassword);
 
+        if (!redisUsername.isEmpty()) {
+            config.setUsername(redisUsername);
+        }
+        if (!redisPassword.isEmpty()) {
+            config.setPassword(redisPassword);
+        }
+       
         logger.log(Level.INFO, "Redis database: %d".formatted(redisPort));
 
         JedisClientConfiguration jedisClient = JedisClientConfiguration
@@ -42,6 +62,12 @@ public class AppConfig {
         RedisTemplate<String, String> template = new RedisTemplate<>();
         template.setConnectionFactory(jedisFac);
 
+        template.setKeySerializer(new StringRedisSerializer());
+        template.setValueSerializer(new StringRedisSerializer());
+        template.setHashKeySerializer(new StringRedisSerializer());
+        template.setHashValueSerializer(new StringRedisSerializer());
+
         return template;
     }
+    
 }
