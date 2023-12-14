@@ -116,3 +116,8 @@ th:errors
 <a data-th-href="@{'/contactsList/' + *{session.name}}">
 <label span data-th-text="*{session.name}"</span></label></a> 
 
+<p th:switch="${value}">
+    <p th:case="'A'">Value is A</p>
+    <p th:case="#{default}">Default Case</p>
+</p>
+

@@ -48,4 +48,11 @@ public ModelAndView addContact(@Valid @ModelAttribute Contact contact, BindingRe
     mav.setStatus(HttpStatus.valueOf(201));
     mav.setViewName("success");
     return max;
-} 
+}
+
+@RequestParam
+/users/search?name=John
+
+@PathVariable
+extract a user ID from a URL like /users/123 
+

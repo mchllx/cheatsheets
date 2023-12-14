@@ -1,0 +1,21 @@
+#object mapper
+
+ObjectMapper objectMapper = new ObjectMapper();
+String jsonString = objectMapper.writeValueAsString(objectToConvert);
+
+//convert JSON to java obj
+YourClassType object = objectMapper.readValue(jsonString, YourClassType.class);
+
+//convert JSON to map
+Map<String, Object> dataMap = objectMapper.readValue(jsonString, new TypeReference<Map<String, Object>>() {});
+
+List<YourClassType> objectList = objectMapper.readValue(jsonString, new TypeReference<List<YourClassType>>() {});
+
+String prettyJsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(objectToConvert);
+{
+  "name" : "John",
+  "age" : 30,
+  "city" : "New York"
+}
+
+//serialisation, pretty printing

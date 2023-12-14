@@ -1,0 +1,12 @@
+#Streams
+
+stream.filter(s -> s.startsWith("A"));
+stream.map(String::toUpperCase);
+stream.sorted();
+stream.forEach(System.out::println);
+String[] array = stream.toArray(String[]::new);
+List<String> list = stream.collect(Collectors.toList());
+long count = stream.count();
+Optional<String> result = stream.reduce((s1, s2) -> s1 + s2);
+stream.anyMatch(s -> s.startsWith("A"));
+Optional<String> first = stream.findFirst();

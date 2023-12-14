@@ -1,0 +1,15 @@
+DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    String dateString = dateFormat.format(new Date());
+
+<div>`dd/MM/yyyy` format is : <span th:text="${#dates.format(myDate, 'dd/MM/yyyy')}"></span></div>
+<div>`yyyy-MMM-dd` format is : <span th:text="${#dates.format(myDate, 'yyyy-MMM-dd')}"></span></div>
+<div>`yyyy-MM-dd : hh:mm:ss a` format is : <span th:text="${#dates.format(myDate, 'yyyy-MM-dd : hh:mm:ss a')}"></span></div>
+
+<div>Default Format : <time th:text="${myDate}"></time></div>
+<div>Current Date : <time th:text="${#dates.createNow()}"></time></div>
+<div th:each="date , stat : ${#dates.arrayFormat(arrayOfDates,'yyyy-MM-dd')}">
+     The formatted array [<span th:text="${stat.count}"></span>] is : <time th:text="${date}"></time>
+</div>
+
+
+

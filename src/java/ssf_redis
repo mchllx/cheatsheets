@@ -4,6 +4,14 @@ redis-server
 redis-cli
 redis-cli -h localhost ping (PONG)
 
+set key value
+get key
+del key
+exists key
+TTL key (check expiration duration)
+EXPIRE key seconds
+PERSIST key (remove expiration)
+
 keys *name*
 keys c01
 keys *
@@ -11,12 +19,22 @@ keys *
 //Timeout/s
 expire cart 300
 
-//Check expiration dur
-ttl cart
-
 -1 means no expiration
 -2 key expired
 
 
 RedisTemplate<String, Object>
 
+redisTemplate.opsForValue().set("myKey", "myValue");
+redisTemplate.opsForValue().get("myKey");
+redisTemplate.delete("myKey");
+redisTemplate.hasKey("myKey");
+redisTemplate.opsForValue().append("myKey", "appendedValue");
+redisTemplate.opsForValue().size("myKey");
+redisTemplate.opsForList().leftPush("myList", "value");
+redisTemplate.opsForValue().setIfAbsent("myKey", "myValue");
+elementsInRange = redisTemplate.opsForList().range("myList", 0, -1);
+redisTemplate.opsForHash().put("myHash", "field", "value");
+
+
+Object firstElement = redisTemplate.opsForList().leftPop("myList");

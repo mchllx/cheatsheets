@@ -1,0 +1,23 @@
+#Statements
+
+for (int i = 0; i < jsonArray.length(); i++) {
+    JSONObject element = jsonArray.getJSONObject(i);
+}
+
+for (int i = 0; i < 5; i++) {
+    // Code to be repeated
+}
+
+int[] numbers = {1, 2, 3, 4, 5};
+for (int number : numbers) {
+    // Code to be repeated for each element
+}
+
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+for (String name : names) {
+    // Code to be repeated for each element
+}
+
+while ((userInput = scanner.nextInt()) != 0) {
+    // Code to be repeated until user enters 0
+}

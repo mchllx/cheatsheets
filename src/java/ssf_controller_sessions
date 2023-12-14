@@ -9,3 +9,6 @@ HttpSession.removeAttribute("attributeName")
 //destroys session
 HttpSession.invalidate();
 
+session.isNew();
+session.getId();
+

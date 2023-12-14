@@ -1,0 +1,91 @@
+#apiKeyInvalid
+URL url = new URL("https://api.example.com/data");
+
+BufferedReader br = new BufferedReader;
+
+
+apiKeyInvalid <- StackTrace error
+
+Export NEWSAPI_KEY=“8b82e6bfc99a4a3ea993395c5f1f304e”
+
+NEWSAPI_KEY=8b82e6bfc99a4a3ea993395c5f1f304e mvn.spring-boot=run
+
+Export SPRING_REDIS_HOSTNAME
+..
+Export NEWSAPI_KEY = “”
+
+Echo $SPRING_REDIS_HOSTNAME
+
+Redis-cli -h $SPRING_REDIS_HOST -p $SRPING_REDIS_PORT —user $SPRING_REDIS_USER —pass $SPRING_REDIS_PASSWORD
+Redis-cli -h roundhouse.proxy.rlwy.net -p 40404 —user default —pass value
+
+@Value("${NEWSAPI_KEY}")
+    private String newsApiKey;
+
+    
+String url = UriComponentsBuilder
+               .fromUriString("https://newsapi.org/v2/top-headlines")
+               .queryParam("country", country)
+               .queryParam("category", category)
+               .queryParam("pageSize", pageSize)
+               .toUriString();
+
+    articles.stream()
+.map(j -> j.asJsonObject())
+.map(o -> {
+    String author = o.getString("author", "Anonymous");
+    String title = o.getString("title");
+    String description = o.getString("description", "No description");
+    String newsUrl = o.getString("url");
+    String image = o.getString("urlToImage",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/310px-Placeholder_view_vector.svg.png");
+    String publish = o.getString("publishedAt");
+    return new News(title, author, description, newsUrl, image, publish);
+})
+.toList();
+
+// GET /news?country=sg&category=technology
+@GetMapping("/news")
+   public ModelAndView getMethodName(@RequestParam MultiValueMap<String, String> params) {
+      ModelAndView mav = new ModelAndView("news");
+      String country = params.getFirst("country");
+      String category = params.getFirst("category");
+
+      List<News> news = newsSvc.getNews(country, category);
+
+      mav.addObject("country", country);
+      mav.addObject("category", category);
+      mav.addObject("news", news);
+
+      return mav;
+   }
+
+   public record News(String title, String author, String description, String url, String image, String publish) { 
+}
+
+@Value("${newsapi.cache.timeout.mins}")
+   long timeout;
+
+   public void cacheNews(String country, String category, JsonArray news) {
+    String key = mkKey(country, category);
+    template.opsForValue()
+       .set(key, news.toString(), timeout, TimeUnit.MINUTES);
+ }
+
+ JsonReader reader = Json.createReader(new StringReader(payload));
+         // [ {...}, {...} ]
+         JsonArray arr = reader.readArray();
+         codes = arr.stream()
+               .map(j -> j.asJsonObject())
+               .map(o -> {
+                  String cca2 = o.getString("cca2").toLowerCase();
+                  String name = o.getJsonObject("name").getString("common");
+                  return new CountryCode(cca2, name);
+               })
+               .sorted((c0, c1) -> c0.name().compareTo(c1.name()))
+               .toList();
+
+               public static String getCodeAsCSV() {
+                return Arrays.asList(COUNTRY_CODE).stream().collect(Collectors.joining(","));
+            }
+

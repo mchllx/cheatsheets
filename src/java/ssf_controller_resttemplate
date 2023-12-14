@@ -1,0 +1,85 @@
+#RestTemplate
+
+//GET
+RestTemplate template = new RestTemplate();
+ResponseEntity<String> resp = template.getForEntity(url, String.class)
+System.out.printf(“Status code: %d\n”, resp.getStatusCodeValue());
+System.out.printf(“Payload: %s\n”, resp.getBody());
+
+//GET request 
+String url = "https://api.example.com/resource";
+String response = restTemplate.getForObject(url, String.class);
+
+//GET request path variables
+String url = "https://api.example.com/resource/{id}";
+Map<String, String> params = new HashMap<>();
+params.put("id", "123");
+String response = restTemplate.getForObject(url, String.class, params);
+
+//POST request
+String url = "https://api.example.com/resource";
+YourRequestObject requestObject = new YourRequestObject();
+YourResponseObject responseObject = restTemplate.postForObject(url, requestObject, YourResponseObject.class);
+
+//Post request with headers
+String url = "https://api.example.com/resource";
+HttpHeaders headers = new HttpHeaders();
+headers.setContentType(MediaType.APPLICATION_JSON);
+HttpEntity<YourRequestObject> requestEntity = new HttpEntity<>(requestObject, headers);
+YourResponseObject responseObject = restTemplate.postForObject(url, requestEntity, YourResponseObject.class);
+
+//PUT
+String url = "https://api.example.com/resource/{id}";
+Map<String, String> params = new HashMap<>();
+params.put("id", "123");
+restTemplate.put(url, requestObject, params);
+
+
+//GET with exchange
+RequestEntity<String> req = RequestEntity
+        .get(url)
+        .accept(MediaType.APPLICATION_JSON)
+        .build();
+RestTemplate template = new RestTemplate();
+ResponseEntity<String> resp = template.exchange(req, String.class);
+try (InputStream is = new ByteArrayInputStream(resp.getBody().getBytes())) {
+JsonReader reader = Json.createReader();
+JsonObject data = reader.readObject();
+}
+
+//GET with QUERYparam
+String url = UriComponentBuilder
+.fromUriString(url)
+.queryParam(“name”, “fred”)
+.queryParam(“email”, “fred@gmail.com”)
+.toUriString();
+RequestEntity req = RequestEntity.get(url).build();
+RestTemplate template = new RestTemplate();
+ResponseEntity<String> resp = template.exchange(req, String.class);
+
+//POST
+MultiValueMap<String, String> form = new LinkedMultiValueMap<>();
+    form.add(“name”, “fred”);
+    form.add(“email”, “fred@gmail.com”);
+
+RequestEntity<MultiValueMap<String, String>> req = RequestEntity
+    .post(url)
+    .contentType(MediaType.APPLICATION_FORM_URLENCODED)
+    .body(form, MultiValueMap<String, String>.class)
+RestTemplate template = new RestTemplate();
+ResponseEntity<String> resp = template.exchange(req, String.class);
+
+//POST JSON data
+JsonObject json = Json.createObject()
+    .add(“name”, “fred”)
+    .add(“email”, “fred@gmail.com”).build();
+
+RequestEntity<String> req = RequestEntity
+    .post(url)
+    .contentType(MediaType.APPLICATION_JSON)
+    .headers(“Accept”, MediaType.APPLICATION_JSON)
+    .body(json.toString(), String.class)
+RestTemplate template = new RestTemplate();
+ResponseEntity<String> resp = template.exchange(req, String.class);
+
+
