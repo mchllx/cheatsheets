@@ -12,6 +12,8 @@
 	}
 
 
+private Logger logger = Logger.getLogger(ContactController.class.getName());
+
 logger lvl default = INFO
 
 "2022–07–16 13:16:51.810 — Date and Time
