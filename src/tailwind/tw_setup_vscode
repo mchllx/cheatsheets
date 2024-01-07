@@ -1,0 +1,31 @@
+npm i tailwindcss Installs file
+
+npx tailwindcss init Generate config file with right syntax
+
+cmd shift p "settings.json" view settings.json
+
+css lint = point out problems with css code
+do not create a custom workbench settings.json
+to set lint message to ignore
+
+1.
+add the right file association
+
+code -> settings -> settings
+"file assoc"
+
+add K and v
+*.css tailwindcss
+*.scss tailwindcss
+*.html html
+
+2.
+edit settings.json directly
+"files.associations": {
+    "*.css": "tailwindcss",
+    "*.scss": "tailwindcss",
+  },
+
+npx tailwindcss -i ./s
+rc/main/resources/static/input.css -o ./src/main/resources/static
+/output.css --watch

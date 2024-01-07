@@ -1,0 +1,25 @@
+cd ~
+
+/usr/local/mysql/bin/mysql -u root -p
+
+ls -ad .b*
+ls -ad .z*
+
+rm -t .bash_profile
+rm -t .zshrc
+
+open -t .bash_profile
+open -t .zshrc    
+
+touch .bash_profile
+touch .zshrc
+
+vi ~/.zshrc
+
+export PATH=${PATH}:/usr/local/mysql/bin //"mysql" name of folder where mysql is installed
+export PATH=${PATH}:/usr/local/mysql-8.2.0-macos13-arm64/bin
+
+nano /etc/paths
+sudo nano /etc/paths
+
+sudo /usr/local/mysql/support-files/mysql.server start 

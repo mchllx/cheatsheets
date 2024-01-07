@@ -1,0 +1,6 @@
+/* inject tailwind's base, components, utilities, and screen styles into css file */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+

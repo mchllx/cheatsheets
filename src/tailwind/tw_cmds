@@ -1,0 +1,12 @@
+Tailwind
+
+do not install tailwind
+
+npm i tailwindcss Installs file
+
+npx tailwindcss init Generate config file with right syntax
+
+cmd shift p "settings.json"
+
+npm install tailwindcss@latest
+

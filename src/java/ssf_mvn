@@ -21,3 +21,5 @@ java -Dserver.port=3000 -jar target/ssf-assessment2-0.0.1-SNAPSHOT.jar
 
 mvn clean spring-boot:run -Dspring-boot.run.arguments="--dataDir=/users/michlim/documents/lectures/contact/data"
 java -jar target/contact-0.0.1-SNAPSHOT.jar --dataDir=/users/michlim/documents/lectures/contact/data2
+
+mvn -N io.takari:maven:wrapper

@@ -4,6 +4,26 @@ redis-server
 redis-cli
 redis-cli -h localhost ping (PONG)
 
+ps -aumichlim | grep redis
+redis-cli shutdown
+sudo service redis-server stop
+killall redis-server
+
+sudo kill -9 19002
+
+redis-cli INFO | grep config_file
+go to redis.conf uncomment bind
+
+sudo lsof -i -P -n | grep LISTEN
+
+brew services stop redis
+brew services restart redis
+brew services start|run redis
+
+redis-cli MONITOR 
+
+
+
 set key value
 get key
 del key

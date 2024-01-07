@@ -37,7 +37,11 @@ docker push mchllx/ssfday16workshop:v1.0.0
 docker pull redis
 docker run –-name ContainerName –dp 6379:6379 redis
 
+docker run --name some-redis -d redis
+
 //connect to your containerised Redis server
 spring.redis.host=127.0.0.1
 spring.redis.port=6379
+
+redis-cli -h localhost -p 6379
 
