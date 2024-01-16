@@ -22,4 +22,8 @@ export PATH=${PATH}:/usr/local/mysql-8.2.0-macos13-arm64/bin
 nano /etc/paths
 sudo nano /etc/paths
 
+exit
+source ~/.bash_profile
+source ~/.zshrc
+
 sudo /usr/local/mysql/support-files/mysql.server start 

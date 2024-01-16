@@ -23,7 +23,6 @@ brew services start|run redis
 redis-cli MONITOR 
 
 
-
 set key value
 get key
 del key
@@ -35,6 +34,19 @@ PERSIST key (remove expiration)
 keys *name*
 keys c01
 keys *
+
+lpush key value
+lpop key value
+lmove bikes:repairs bikes:finished left left //move it from bikes:repairs to bikes:finished
+llen key
+ltrim key 0 2 //trim to elems at index 0 to index 2  //use case: latest listings (recent 10)
+lrange key 0 -1 //returns all elems in list
+brpop key 1 // if list is empty, waits for 1 second before returning
+del key //delete by key
+exists key
+
+pubsub channels *
+
 
 //Timeout/s
 expire cart 300
