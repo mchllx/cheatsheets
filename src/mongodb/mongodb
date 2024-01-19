@@ -1,0 +1,5 @@
+mongodsh
+
+mongod --config /opt/homebrew/etc/mongod.conf --fork
+brew services start mongodb-community@7.0
+mongodb+srv://mich:<password>@cluster0.noln12t.mongodb.net/
